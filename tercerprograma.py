@@ -11,7 +11,7 @@ print(minombre[2:]) #del tercer caracter (incluido) al final
 print(minombre[:3]) #del principio al cuarto caracter (sin incluir)
 print(minombre[2:4]) #del tercer caracter (incluido) al quinto (sin incluir)
 print("2: "+minombre[2])
-print("-2"+minombre[-2])
+print("-2"+minombre[:-2])
 print(minombre[1:10])
 print(minombre[-4]) #cuenta desde el final
 

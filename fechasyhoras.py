@@ -52,3 +52,13 @@ locale.setlocale(locale.LC_TIME,'es_ES.UTF-8')
 fechacastellano = datetime.now()
 print(fechacastellano) #ojo, sale en formato numerico
 print("fecha castellano:",fechacastellano.strftime("%A %d %b %Y"))
+
+
+
+#zonas horarias
+from datetime import datetime
+from pytz import timezone
+import pytz
+#print(pytz.all_timezones)
+print(datetime.now(pytz.timezone('Asia/Tokyo')))
+print(datetime.now(pytz.timezone('Europe/Madrid')))
