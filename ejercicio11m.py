@@ -2,11 +2,10 @@
 
 nroprimos = input("Numero de primos a mostrar: ")
 
-if nroprimos.isdigit(): 
-	nroprimos = int(nroprimos)
-    nro = 1 
+try:
+    nroprimos = int(nroprimos)
+    nro = 1
     while nroprimos > 0: # a cada primo que saque por pantalla se restara 1 a nroprimos
-
         div = 2
         band = True
         if nro == 1:
@@ -20,8 +19,10 @@ if nroprimos.isdigit():
                 div += 1
             if band:
                 print(nro)
+                nroprimos -= 1
             #else: 
                 #print("No es primo")
         nro += 1
-else:
-    print("Inserte numero valido")
+    
+except:
+    print("Ingrese numero valido")

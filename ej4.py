@@ -14,28 +14,29 @@ while i == 0:
     # para comprobarlo, quitamos el (posible) punto y vemos si es digito
     # ojo, si se introdujese un numero con varios puntos (89.09.0) tambien lo daria como bueno!! 
     # para evitar problemas, hacemos que reemplace solo una vez (los numeros con varios puntos daran error)
-    try:
+    
+    if (Num1.replace(".","",1).isdigit() and Num2.replace(".","",1).isdigit()):
 
-        if (Num1.replace(".","",1).isdigit() and Num2.replace(".","",1).isdigit()):
-
-            Num1 = float(Num1)
-            Num2 = float(Num2)
-            if operacion == '+':
-                print(Num1+Num2)
-            elif operacion == '-':
-                print(Num1-Num2)
-            elif operacion == '*':
-                print(Num1*Num2)
-            elif operacion == '/':
+        Num1 = float(Num1)
+        Num2 = float(Num2)
+        if operacion == '+':
+            print(Num1+Num2)
+        elif operacion == '-':
+            print(Num1-Num2)
+        elif operacion == '*':
+            print(Num1*Num2)
+        elif operacion == '/':
+            try:
                 print(Num1/Num2)
-            else:
-                print("La operacion introducida no es correcta")
+            except (ZeroDivisionError):
+                print("No se puede dividir entre cero")
 
         else:
-            print("Ingrese numero correcto")
+            print("La operacion introducida no es correcta")
 
-    except (ZeroDivisionError):
-        print("No se puede dividir entre cero")
+    else:
+        print("Ingrese numero correcto")
+
     
     respuesta = input("¿Desea seguir haciendo operaciones? (si/no): ")
     if respuesta == "no":

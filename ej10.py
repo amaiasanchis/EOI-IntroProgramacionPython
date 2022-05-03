@@ -1,29 +1,31 @@
 # 10. Adivinar una palabra.
 
+palabrasecreta = "fiesta"
 
-```
-Algortimo AdivinarPalabra
-Palabra <- "Fiesta"        
-R = "Si"             
-Repetir          
-	Escribir "Entre palabra a adivinar"      
-	Leer PalabraEntrada         
-	If Palabra = PalabraEntrada      
-		Escribir "Has adivinado"        
-	Sino   
-		Escribir "Otra oportunidad (si/no)"
-		Leer R
-Hasta que R = "no"
-Escribir "Gracias por jugar"
-FinAlgoritmo
+print("Inserte palabra (n para abandonar): ")
 
-```
-palabrasecreta = "Fiesta"
-R = "Si"
-
-palabra = input("Inserte palabra: ")
-if palabra == palabrasecreta:
-    print("Victoria")
-else: 
+while True:
+	palabra = input().lower()
+	if palabra == palabrasecreta:
+		print("Victoria")
+		break #ahorra tener variable boolean comprobando estado
+	elif palabra == "n":
+		break
+	else:
+		print("Inserte palabra (N para abandonar): ")
     
-
+#version 2
+palabra = "Pirata".lower()
+countE = 1
+count = 0
+intento = input("Intenta adivinar palabra: ").lower()
+pistas = ["Les Gusta el Oro", "Les Gusta el Mar", "Usan Parches", "Tienen pata de palo"]
+while(palabra != intento):
+	if(count == len(pistas)):         
+		count = 0        
+		print(pistas[count])    
+	else: 
+		print(pistas[count])    
+	intento = input(f"Intenta adivinar palabra llevas {countE} fallos: ").lower()    
+	countE += 1    
+	count += 1
