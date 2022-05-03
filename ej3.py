@@ -8,3 +8,4 @@ Doblar hacia fuera la parte superior por cada lado
 Comprobar los pasos anteriores
 Probar que vuela
 """)
+# puede ser el principio de un superalgoritmo en el que cada paso llame a un subalgoritmo

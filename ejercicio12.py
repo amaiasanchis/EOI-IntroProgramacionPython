@@ -5,7 +5,7 @@
 nro = input("Ingrese un numero: ")
 resul = 0
 #comprobar que el numero lo es
-if (nro.isnumeric()):
+if (nro.isdigit()):
     nro = int(nro)
     while nro != 0:
         resul += nro%10
