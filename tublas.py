@@ -29,6 +29,7 @@ for letra in letras:
 
 #creamos tupla y podemos enumerar con el valor que queramos (en este caso desde el 40)
 letrasAlfabeto = tuple(x for x in letras)
+print(letrasAlfabeto)
 for letra in enumerate(letrasAlfabeto,40):
     print(letra)
 

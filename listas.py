@@ -29,7 +29,7 @@ print("union de listas",colores)
 colores.sort()
 print("lista ordenada alfabeticamente",colores)
 
-#pop
+#pop eliminar elemento en cierta posicion
 colores.pop(3)
 print("Eliminamos tercerelemento",colores)
 
@@ -39,3 +39,18 @@ print("orden descendente",colores)
 
 colores.sort(reverse=True)
 print("orden descendente",colores)
+
+#listas de comprension
+frutas = ['manzana','platano','kiwi','nispero','mango']
+
+#lista con frutas con letra a 
+'''
+nuevalista = []
+for fruta in frutas:
+    if 'a' in fruta:
+        nuevalista.append(fruta)
+ '''
+nuevalista = [fruta for fruta in frutas if 'a' in fruta]
+print(nuevalista)
+
+
