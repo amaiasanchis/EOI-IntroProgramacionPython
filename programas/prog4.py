@@ -4,6 +4,7 @@
 # temperaturas anuales desde la más alta hasta la más baja.
 
 from random import randint
+from unicodedata import digit
 
 #creamos un diccionario que asocie ciudades y promedio anual de temperatura
 dicciudadtemp = {}
@@ -20,33 +21,54 @@ for ciudad in range(1,21):
         temperaturas.append(randint(-5,40))
     #print(temperaturas)
     #calculamos el promedio anual
+    '''
     contador = 0
     for temperatura in temperaturas:
         contador += temperatura
-    promedio = contador / len(temperaturas)
+    '''
+    sumtemperaturas = sum([temperatura for temperatura in temperaturas])
+    promedio = sumtemperaturas / len(temperaturas)
     listapromedios.append(promedio) #round(promedio,2)
     
     #print(promedio)
     #print(ciudad)
 
     #anadimos entrada al diccionario. key: ciudad. valor: temp promedio
-    dicciudadtemp[promedio] = ciudad
+    dicciudadtemp[ciudad] = promedio
 #print(listapromedios)
 #print(dicciudadtemp)
 
 # ciudad con temp promedio mas alta y mas baja
+'''
 #ordenamos la lista de temp promedio
 listapromedios.sort()
 #print(listapromedios)
 tempmayor = listapromedios[-1]
 tempmenor = listapromedios[0]
 #print(tempmayor, tempmenor)
-ciudadmayor = dicciudadtemp[tempmayor]
-ciudadmenor = dicciudadtemp[tempmenor]
-print(f'La ciudad con la temp promedio mas alta es la numero {ciudadmayor} y la de temp promedio mas baja es la numero {ciudadmenor}')
-    
+'''
+#opcion 1
+tempmayor = max(dicciudadtemp.values()) 
+tempmenor = min(dicciudadtemp.values()) 
+
+#list(dicciudadtemp.keys())[list(dicciudadtemp.values()).index(tempmayor)]  -> 
+#list(dicciudadtemp.values())::: hacemos una lista con los promedios
+# [list(dicciudadtemp.values()).index(tempmayor)] ::: hallamos el indice de la mayor temperatura
+# buscamos en las keys (ciudades) la correspondiente al indice
+#listamos
+print(f'\n La ciudad con el promedio anual mas ALTO es {list(dicciudadtemp.keys())[list(dicciudadtemp.values()).index(tempmayor)]} con un promedio de: {tempmayor} ºC')
+
+print(f'\n La ciudad con el promedio anual mas BAJO es {list(dicciudadtemp.keys())[list(dicciudadtemp.values()).index(tempmenor)]} con un promedio de: {tempmenor} ºC \n') 
+
+ciudad_max = max(dicciudadtemp,key=dicciudadtemp)
+ciudad_min = min(dicciudadtemp,key=dicciudadtemp)
+
+print(ciudad_max,ciudad_min)
+
+'''
 #lista de ciudades ordenadas por temperatura promedio anual (de mas a menos)
 print('Ciudades ordenadas por temperatura promedio anual')
 listapromedios.sort(reverse=True)
 for valor in listapromedios:
     print(f'Ciudad: {dicciudadtemp[valor]}, temperatura {round(valor,2)}')
+'''
