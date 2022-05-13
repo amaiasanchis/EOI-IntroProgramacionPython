@@ -1,0 +1,4 @@
+hola, 
+esto es un fichero 
+con varias lineas
+tildes à ñ é
