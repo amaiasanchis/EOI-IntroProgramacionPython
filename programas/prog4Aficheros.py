@@ -1,5 +1,5 @@
 from random import randint
-from prog2ficheros import lee_o_crea_fichero_a_partir_de_una_lista as leer_escribir
+from prog2Aficheros import lee_o_crea_fichero_a_partir_de_una_lista as leer_escribir
 
 
 ListaCiudades = ['Malaga','Alava','Albacete','Alicante','Almería','Asturias','Avila','Badajoz','Barcelona','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ceuta','Ciudad Real','Córdoba','Cuenca','Formentera','Girona']

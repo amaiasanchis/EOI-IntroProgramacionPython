@@ -36,8 +36,6 @@ try:
         print(f'El contenido del fichero es {contenido}')
     else: 
         print('No se puede procesar la info')
-
-    fichero.close()
 except Exception as e:
     print(f'E:{e}')
 finally:
