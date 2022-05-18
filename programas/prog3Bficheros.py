@@ -2,13 +2,17 @@ from os.path import exists
 
 def Proceso(contenido_hombre,contenido_mujer):
     pass
-    lista_mujer = eval(contenido_mujer)
-    lista_hombre = eval(contenido_hombre)
-
+    
     file_resultado = 'programas\DatosProg3resul.txt'
+    fichero_resultado = None
     try: 
+        
         #numero de personas del genero
         fichero_resultado = open(file_resultado,'wt',encoding='UTF-8')
+
+        lista_mujer = eval(contenido_mujer)
+        lista_hombre = eval(contenido_hombre)
+
         fichero_resultado.write(f"Numero de mujeres: {len(lista_mujer)}\n")
         fichero_resultado.write(f"Numero de hombres: {len(lista_hombre)}\n")
 
@@ -40,12 +44,15 @@ def Proceso(contenido_hombre,contenido_mujer):
     except Exception as e:
         print(f'E(Proceso):{e}')
     finally:
-        fichero_resultado.close()
+        if fichero_resultado != None: 
+            fichero_resultado.close()
 
 
 try:
     file_male = 'programas\DatosProg3Hombres.txt'
     file_female = 'programas\DatosProg3Mujeres.txt'
+    fichero_hombre = None
+    fichero_mujer = None
     if exists(file_male and file_female):
         fichero_hombre = open(file_male,'rt',encoding = 'UTF-8')
         fichero_mujer = open(file_female,'rt',encoding = 'UTF-8')
@@ -53,10 +60,14 @@ try:
         contenido_mujer = fichero_mujer.read()
         Proceso(contenido_hombre,contenido_mujer)
         #print(f'El contenido del fichero es {contenido}')
-        fichero_mujer.close()
-        fichero_hombre.close()
+        
     else: 
         print('No se puede procesar la info')
 except Exception as e:
     print(f'E:{e}')
+finally:
+    if (fichero_mujer != None):
+        fichero_mujer.close()
+    if (fichero_hombre != None):    
+        fichero_hombre.close()
 

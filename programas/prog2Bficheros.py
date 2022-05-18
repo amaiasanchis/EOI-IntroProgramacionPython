@@ -2,12 +2,14 @@ from os.path import exists
 
 def Proceso(contenido):
     pass
-    
-    listaedades = eval(contenido)
-
     file_resultado = 'DatosProg2resul.txt'
+    # si no se puede abrir en la l11, queda vacío
+    #luego pondremos un comprobante en finally
+    fichero_resultado = None
+
     try: 
         fichero_resultado = open(file_resultado,'wt',encoding='UTF-8')
+        listaedades = eval(contenido)
         mayores = len([edad for edad in listaedades if edad >= 18])
         menores = len([edad for edad in listaedades if edad < 18])
         fichero_resultado.write(f"Hay {mayores} mayores de edad y {menores} menores de edad.\n")
@@ -25,11 +27,15 @@ def Proceso(contenido):
     except Exception as e:
         print(f'E(Proceso):{e}')
     finally:
-        fichero_resultado.close()
+        #comprobante de que fichero_resultado tiene contenido 
+        # si no, si ha habido problemas para abrir file_resultados
+        #daria error para cerrarlo
+        if (fichero_resultado != None):
+            fichero_resultado.close()
 
 
 try:
-    file = 'DatosProg2.txt'
+    file = 'programas/DatosProg2.txt'
     if exists(file):
         fichero = open(file,'rt',encoding = 'UTF-8')
         contenido = fichero.read()

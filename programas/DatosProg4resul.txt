@@ -18,7 +18,18 @@ Córdoba -> [31, 0, 38, 13, 5, 22, 13, 3, 40, 6, 22, 1]
 Cuenca -> [33, 46, 8, 35, 23, 4, 7, 28, 22, 15, 38, 7]
 Formentera -> [29, 24, 43, 48, 37, 22, 42, 42, 14, 19, 38, 23]
 Girona -> [34, 46, 6, 50, 19, 16, 26, 21, 37, 39, 49, 11]
+================================================================================ 
 La ciudad con el promedio anual mas ALTO es Formentera con un promedio de: 31.75 ºC
 La ciudad con el promedio anual mas BAJO es Córdoba con un promedio de: 16.17 ºC 
+================================================================================ 
 La lista de las ciudades ordenadas es :
-['Formentera', 'Almería', 'Avila', 'Girona', 'Barcelona', 'Cáceres', 'Cádiz', 'Asturias', 'Cantabria', 'Alicante', 'Badajoz', 'Ceuta', 'Cuenca', 'Alava', 'Albacete', 'Castellón', 'Ciudad Real', 'Burgos', 'Malaga', 'Córdoba']
+['Formentera', 'Almería', 'Avila', 'Girona', 'Barcelona', 'Cáceres', 'Cádiz', 'Asturias', 'Cantabria', 'Alicante', 'Badajoz', 'Ceuta', 'Cuenca', 'Alava', 'Albacete', 'Castellón', 'Ciudad Real', 'Burgos', 'Malaga', 'Córdoba'] Formentera 	 31.75ºC 	 Almería 	 31.08ºC 
+ Avila 	 30.67ºC 	 Girona 	 29.5ºC 
+ Barcelona 	 29.25ºC 	 Cáceres 	 29.08ºC 
+ Cádiz 	 27.92ºC 	 Asturias 	 27.83ºC 
+ Cantabria 	 27.0ºC 	 Alicante 	 26.25ºC 
+ Badajoz 	 24.58ºC 	 Ceuta 	 23.67ºC 
+ Cuenca 	 22.17ºC 	 Alava 	 22.08ºC 
+ Albacete 	 22.0ºC 	 Castellón 	 20.92ºC 
+ Ciudad Real 	 20.83ºC 	 Burgos 	 19.17ºC 
+ Malaga 	 17.92ºC 	 Córdoba 	 16.17ºC 
