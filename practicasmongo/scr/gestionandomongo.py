@@ -88,8 +88,8 @@ if __name__ == '__main__':
     col=None
     while 1:
         print('1 - Connect Mongo')
-        print('2 - Create Database')
-        print('3 - Create a collection')
+        print('2 - Open or Create Database')
+        print('3 - Open or Create a collection')
         print('4 - inserting documents in the collection')
         print('5 - insert multiple documents')
         print('6 - Retrieving the data from the collection')
