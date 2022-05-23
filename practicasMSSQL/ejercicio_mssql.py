@@ -78,7 +78,7 @@ def recuperarDatosEstadisticosBBDD(con,id):
 if __name__ == '__main__':
     lista=["hola","caracola"]
    # try:
-    fichero_procesar='./caracola2.txt'
+    fichero_procesar='./src/datos/caracola2.txt'
     con=None
     if GestionFicherosValidacion(fichero_procesar,lista):
         print('Proceso inicia')
