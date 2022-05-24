@@ -1,5 +1,6 @@
 import requests
 import json
+
 url='http://httpbin.org/post' #endpoint de conexion
 user= json.dumps({'Username':'Billy'}) #dumps para serializar a str el contenido del json
 header= {'content-type':'application/json'}

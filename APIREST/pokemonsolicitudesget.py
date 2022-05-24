@@ -53,7 +53,7 @@ def get_pokemons(url, offset=0):
         continuar = input('Desea seguir con mas pokemons?(y/n)').lower()
 
         if continuar == 'y':
-            get_pokemons(url,offset+20)
+            get_pokemons(url,offset+20) #iterativa
 
 
 #llamamos a la funcion def get_pokemons
