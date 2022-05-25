@@ -119,10 +119,12 @@ if __name__ == '__main__':
         elif selection =='6':            
             query={"Name":"Billy"}
             retrievingDocument(query,col)
-        elif selection =='7':            
+        elif selection =='7':   
+            #recuperamos todos los docs cuyo 'branch' sea 'CSE'         
             query={"Branch":"CSE"}
             retrievingManyDocuments(query,col)
         elif selection =='8':        
+            # recupera todos los documentos de la coleccion
             retrieveAllDocuments(col)
         elif selection =='9':            
             query={"Roll No":{"$eq":153}}

@@ -35,15 +35,16 @@ def connectBBDD(version=False):
 
     clientDB = MongoClient('mongodb://localhost:27017/')
     db = clientDB.admin
-    #duda: para que sirve este bucle? que es version? no entra
+    # version se utiliza como un parametro mas. Basicamente es para que no 
+    # aparezcan los datos de host, version, process cada vez, ya se que se ha
+    # establecido correctamente 
     if(version):
         resultado = db.command('serverStatus')
         print('Host:',resultado['host'])
         print('Version:',resultado['version'])
         print('Process:',resultado['process'])
         print(clientDB.list_database_names())
-    # clientDB = MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True) 
-    # print('clientdb',clientDB)
+    # clientDB es una funcion (clientDB = MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True) )
     return clientDB 
 
 # funcion de creacion de la base de datos 

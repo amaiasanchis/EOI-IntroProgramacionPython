@@ -2,8 +2,6 @@ import requests
 
 if __name__ == '__main__':
     url = 'http://httpbin.org/cookies'
-
-    
     # r= requests.get(url)
     # print(r.text) #contenido de la url
     '''
@@ -26,7 +24,7 @@ if __name__ == '__main__':
     }'''
 
     if response.status_code==200: # todo ok, sin error
-        cookies = response.cookies #cookies es un comando para obtener las cookies
+        cookies = response.cookies #duda
         print(cookies) #<RequestsCookieJar[]>
 
         print("El contenido es:")

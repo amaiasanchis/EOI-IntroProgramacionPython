@@ -13,7 +13,7 @@ def GestionFicherosValidacion(file_nombre,lista_datos):
                 #abrimos el fichero en modo lectura
                 fichero = open (file_nombre,'rt',encoding='UTF-8')
                 #leemos el fichero y guardamos el contenido en la variable contenido
-                contenido = fichero.read()
+                # contenido = fichero.read() #comentamos porque no lo vamos a sacar por pantalla
                 print(f'Fichero:"{file}", previamente creado' )
                 #este es su contenido:\n{contenido}')
             else:
@@ -29,6 +29,7 @@ def GestionFicherosValidacion(file_nombre,lista_datos):
         print(f'E-1:{e}')
         return False
     finally:
+        # comprobacion de que el fichero se ha abierto/generado
         if fichero != None: fichero.close()
 
 def connectBBDD(version=False):
@@ -45,11 +46,11 @@ def connectBBDD(version=False):
     driver='DRIVER={ODBC Driver 17 for SQL Server};'
     others=f"SERVER={server};DATABASE={database};UID={username};PWD={password}"
     connection_string='{}{}'.format(driver,others)
-    con = pyodbc.connect(connection_string)
+    con = pyodbc.connect(connection_string) #pyodbc.Connection object 
     #with pyodbc.connect(connection_string) as cur:
-    with con as wcon:
+    with con as wcon: #wcon???
         res=wcon.cursor().execute("SELECT @@VERSION AS 'SQL Server Version Details'")
-        if (version):
+        if (version): #comprobacion de version?
             for r in res:
                 print(r[0])
     return con
